@@ -176,113 +176,7 @@
 </head>
 <body class="font-sans text-gray-800">
     <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold">
-                    SH
-                </div>
-                <span class="text-xl font-bold text-gray-900">Smart Hotline</span>
-            </a>
-            
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="text-gray-700 hover:text-primary-600 transition-colors">Accueil</a>
-                <!-- Services Dropdown -->
-                <div class="relative group">
-                    <button class="text-gray-700 hover:text-primary-600 transition-colors flex items-center">
-                        Services
-                        <i class="fas fa-chevron-down text-xs ml-1"></i>
-                    </button>
-                    <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                        <a href="services.html" class="block px-4 py-3 hover:bg-primary-50 transition-colors border-b">
-                            <div class="flex items-center">
-                                <i class="fas fa-th-large text-primary-600 mr-3"></i>
-                                <div>
-                                    <div class="font-medium">Tous les services</div>
-                                    <div class="text-xs text-gray-500">Découvrez notre gamme complète</div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="reception.html" class="block px-4 py-3 hover:bg-primary-50 transition-colors">
-                            <div class="flex items-center">
-                                <i class="fas fa-phone-alt text-primary-600 mr-3"></i>
-                                <div>
-                                    <div class="font-medium">Réception d'appels</div>
-                                    <div class="text-xs text-gray-500">Ne manquez jamais un appel</div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="emission.html" class="block px-4 py-3 hover:bg-primary-50 transition-colors">
-                            <div class="flex items-center">
-                                <i class="fas fa-phone-volume text-primary-600 mr-3"></i>
-                                <div>
-                                    <div class="font-medium">Appels sortants</div>
-                                    <div class="text-xs text-gray-500">Développez votre clientèle</div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="support.html" class="block px-4 py-3 hover:bg-primary-50 transition-colors">
-                            <div class="flex items-center">
-                                <i class="fas fa-headset text-primary-600 mr-3"></i>
-                                <div>
-                                    <div class="font-medium">Support client</div>
-                                    <div class="text-xs text-gray-500">Améliorez la satisfaction</div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="crm-lists.html" class="block px-4 py-3 hover:bg-primary-50 transition-colors">
-                            <div class="flex items-center">
-                                <i class="fas fa-database text-primary-600 mr-3"></i>
-                                <div>
-                                    <div class="font-medium">CRM & Listes</div>
-                                    <div class="text-xs text-gray-500">Maximisez vos ventes</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <a href="price.html" class="text-gray-700 hover:text-primary-600 transition-colors">Tarifs</a>
-                <a href="about.html" class="text-gray-700 hover:text-primary-600 transition-colors">À propos</a>
-                <a href="blog.html" class="text-primary-600 font-semibold">Blog</a>
-                <a href="contact.html" class="text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
-            </div>
-            
-            <div class="flex items-center space-x-4">
-                <!-- Language Selector -->
-                <div class="relative">
-                    <a href="../en/blog.html" class="flex items-center space-x-1 text-gray-700 hover:text-primary-600 transition-colors">
-                        <span>FR</span>
-                        <i class="fas fa-exchange-alt text-xs ml-1"></i>
-                    </a>
-                </div>
-                
-                <button id="mobileMenuToggle" class="md:hidden text-gray-700">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </nav>
-        
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-            <div class="container mx-auto px-6 py-4 flex flex-col space-y-3">
-                <a href="index.html" class="text-gray-700 hover:text-primary-600 transition-colors">Accueil</a>
-                <div class="border-t pt-3">
-                    <div class="font-medium text-gray-700 mb-2">Services</div>
-                    <div class="pl-4 space-y-2">
-                        <a href="services.html" class="block text-gray-600 hover:text-primary-600 transition-colors">Tous les services</a>
-                        <a href="reception.html" class="block text-gray-600 hover:text-primary-600 transition-colors">Réception d'appels</a>
-                        <a href="emission.html" class="block text-gray-600 hover:text-primary-600 transition-colors">Appels sortants</a>
-                        <a href="support.html" class="block text-gray-600 hover:text-primary-600 transition-colors">Support client</a>
-                        <a href="crm-lists.html" class="block text-gray-600 hover:text-primary-600 transition-colors">CRM & Listes</a>
-                    </div>
-                </div>
-                <a href="price.html" class="text-gray-700 hover:text-primary-600 transition-colors">Tarifs</a>
-                <a href="about.html" class="text-gray-700 hover:text-primary-600 transition-colors">À propos</a>
-                <a href="blog.html" class="text-primary-600 font-semibold">Blog</a>
-                <a href="contact.html" class="text-gray-700 hover:text-primary-600 transition-colors">Contact</a>
-            </div>
-        </div>
-    </header>
+    <header id="main-header" class="fixed top-0 left-0 right-0 bg-white z-40 shadow-sm"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16"><a href="../fr/index.html" class="flex items-center gap-2 font-bold text-xl text-blue-700 flex-shrink-0"><div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center"><i class="fas fa-headset text-white text-sm"></i></div>Smart Hotline</a><nav class="hidden lg:flex items-center gap-5"><div class="relative group"><button class="flex items-center gap-1 text-gray-700 hover:text-blue-600 font-medium py-2">Solutions <svg class="w-4 h-4 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button><div class="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50 hidden group-hover:block"><a href="../fr/services/inbound.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Appels Entrants</a><a href="../fr/services/outbound.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Appels Sortants</a><a href="../fr/services/ai.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Agents IA Vocaux &#x1F195;</a><a href="../fr/services/support.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Support Client</a><a href="../fr/services/crm.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">CRM &amp; Listes</a></div></div><a href="../fr/price.html" class="text-gray-700 hover:text-blue-600 font-medium">Tarifs</a><a href="../fr/sectors.html" class="text-gray-700 hover:text-blue-600 font-medium">Secteurs</a><a href="../fr/about.html" class="text-gray-700 hover:text-blue-600 font-medium">A Propos</a><a href="../fr/blog/index.html" class="text-gray-700 hover:text-blue-600 font-medium">Blog</a><a href="../fr/contact.html" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a></nav><div class="hidden lg:flex items-center gap-3"><select id="currency-selector" class="text-sm border border-gray-200 rounded-lg px-2 py-1 text-gray-600 cursor-pointer"><option value="CAD">CA$</option><option value="EUR">EUR</option><option value="USD">USD</option><option value="CHF">CHF</option></select><a href="../en/index.html" class="text-sm text-gray-500 hover:text-blue-600 font-medium">EN</a><a href="../fr/contact.html" class="btn-primary text-sm py-2 px-4">Demo Gratuite</a></div><button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-gray-100"><i class="fas fa-bars text-gray-700 text-xl"></i></button></div></div><div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-4 py-4"><a href="../fr/services.html" class="block text-gray-700 py-2 border-b border-gray-100">Solutions</a><a href="../fr/services/inbound.html" class="block text-gray-500 py-2 pl-4 text-sm">Appels Entrants</a><a href="../fr/services/outbound.html" class="block text-gray-500 py-2 pl-4 text-sm">Appels Sortants</a><a href="../fr/services/ai.html" class="block text-gray-500 py-2 pl-4 text-sm">Agents IA Vocaux</a><a href="../fr/price.html" class="block text-gray-700 py-2 border-b border-gray-100">Tarifs</a><a href="../fr/sectors.html" class="block text-gray-700 py-2 border-b border-gray-100">Secteurs</a><a href="../fr/about.html" class="block text-gray-700 py-2 border-b border-gray-100">A Propos</a><a href="../fr/blog/index.html" class="block text-gray-700 py-2 border-b border-gray-100">Blog</a><a href="../fr/contact.html" class="block text-gray-700 py-2">Contact</a><a href="../fr/contact.html" class="block mt-4 btn-primary text-center">Demo Gratuite</a></div></header>
     
     <!-- Hero Section -->
     <section class="pt-24 pb-16 bg-gradient-to-br from-primary-50 to-white">
@@ -553,9 +447,9 @@
                     <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&dpr=1" alt="Intégration technologique" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <span class="text-primary-600 text-sm font-semibold">Technologie</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3">IA et Humain : L'Alliance Parfaite pour le Support Client</h3>
+                        <h3 class="text-xl font-bold mt-2 mb-3">IA et Conseillers : L'Alliance Parfaite pour le Support Client</h3>
                         <p class="text-gray-600 mb-4">
-                            Découvrez comment combiner IA et intervention humaine pour une expérience client optimale.
+                            Découvrez comment combiner IA et intervention conseillere pour une expérience client optimale.
                         </p>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center space-x-2">
@@ -1249,35 +1143,35 @@
                 `
             },
             article10: {
-                title: "IA et Humain : L'Alliance Parfaite pour le Support Client",
+                title: "IA et Conseillers : L'Alliance Parfaite pour le Support Client",
                 content: `
                     <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&dpr=1" alt="Intégration technologique" class="w-full rounded-lg mb-6">
-                    <p class="text-lg mb-4">Dans le paysage numérique actuel, l'intégration de l'intelligence artificielle avec le support humain révolutionne le service client. Cette approche hybride combine l'efficacité de l'IA avec l'empathie et les capacités de résolution de problèmes des agents humains.</p>
+                    <p class="text-lg mb-4">Dans le paysage numérique actuel, l'intégration de l'intelligence artificielle avec le support conseiller révolutionne le service client. Cette approche hybride combine l'efficacité de l'IA avec l'empathie et les capacités de résolution de problèmes des conseillers.</p>
                     
-                    <h3 class="text-2xl font-bold mb-4">Le Modèle de Support IA-Humain</h3>
+                    <h3 class="text-2xl font-bold mb-4">Le Modèle de Support IA-Conseillers</h3>
                     <p class="mb-4">Les systèmes de service client les plus efficaces utilisent une approche par niveaux :</p>
                     <ul class="list-disc pl-6 mb-4 space-y-2">
                         <li>L'IA gère les demandes simples et répétitives instantanément</li>
-                        <li>Les problèmes complexes ou sensibles sont escaladés vers des agents humains</li>
+                        <li>Les problèmes complexes ou sensibles sont escaladés vers des conseillers</li>
                         <li>L'IA fournit aux agents des informations pertinentes pendant les interactions</li>
                         <li>L'apprentissage continu des interactions améliore les deux systèmes</li>
                     </ul>
                     
-                    <h3 class="text-2xl font-bold mb-4">Avantages de l'Intégration IA-Humain</h3>
+                    <h3 class="text-2xl font-bold mb-4">Avantages de l'Intégration IA-Conseillers</h3>
                     <ul class="list-disc pl-6 mb-4 space-y-2">
                         <li><strong>Disponibilité 24/7:</strong> L'IA fournit des réponses instantanées à tout moment</li>
                         <li><strong>Efficacité des Coûts:</strong> Réduction des coûts de main-d'œuvre pour les demandes de routine</li>
                         <li><strong>Temps de Réponse Améliorés:</strong> L'IA gère immédiatement les requêtes simples</li>
                         <li><strong>Satisfaction Client Accrue:</strong> Résolution plus rapide des problèmes</li>
-                        <li><strong>Meilleure Allocation des Ressources:</strong> Les agents humains se concentrent sur les interactions complexes et à forte valeur</li>
+                        <li><strong>Meilleure Allocation des Ressources:</strong> Les conseillers se concentrent sur les interactions complexes et à forte valeur</li>
                     </ul>
                     
                     <h3 class="text-2xl font-bold mb-4">Stratégies d'Implémentation</h3>
                     <ol class="list-decimal pl-6 mb-4 space-y-2">
                         <li>Identifiez quelles demandes peuvent être gérées par l'IA</li>
-                        <li>Mettez en œuvre des chemins d'escalade clairs pour l'intervention humaine</li>
+                        <li>Mettez en œuvre des chemins d'escalade clairs pour l'intervention conseillere</li>
                         <li>Formez l'IA sur vos produits, services et voix de marque spécifiques</li>
-                        <li>Assurez une transition fluide entre l'IA et les agents humains</li>
+                        <li>Assurez une transition fluide entre l'IA et les conseillers</li>
                         <li>Examinez et optimisez régulièrement les deux systèmes basés sur les retours</li>
                     </ol>
                     
@@ -1285,13 +1179,13 @@
                     <p class="mb-4">Suivez ces directives pour des résultats optimaux :</p>
                     <ul class="list-disc pl-6 mb-4 space-y-2">
                         <li>Soyez transparent avec les clients sur quand ils interagissent avec l'IA</li>
-                        <li>Fournissez toujours une option pour parler à un agent humain</li>
+                        <li>Fournissez toujours une option pour parler à un conseiller</li>
                         <li>Mettez à jour régulièrement les bases de connaissances de l'IA avec de nouvelles informations</li>
-                        <li>Formez les agents humains à travailler efficacement avec les outils IA</li>
+                        <li>Formez les conseillers à travailler efficacement avec les outils IA</li>
                         <li>Surveillez la satisfaction client sur tous les points de contact</li>
                     </ul>
                     
-                    <p class="text-lg font-semibold mt-6">Découvrez comment Smart Hotline peut vous aider à mettre en œuvre l'équilibre parfait entre technologie et touche humaine avec nos <a href="support.html" class="text-primary-600 hover:underline">solutions de support intégrées</a>.</p>
+                    <p class="text-lg font-semibold mt-6">Découvrez comment Smart Hotline peut vous aider à mettre en œuvre l'équilibre parfait entre technologie et touche conseillere avec nos <a href="support.html" class="text-primary-600 hover:underline">solutions de support intégrées</a>.</p>
                 `
             }
         };
