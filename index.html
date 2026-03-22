@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Hotline Agency</title>
-    <script>
-        // Redirect to French version
-        window.location.href = "fr/";
-    </script>
-</head>
-<body>
-    <p>Redirection en cours... Si vous n'êtes pas redirigé automatiquement, <a href="fr/">cliquez ici</a>.</p>
-    <p>Redirecting... If you are not redirected automatically, <a href="fr/">click here</a>.</p>
-</body>
-</html>
+<html><head><meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url=fr/index.html">
+<script>
+fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
+  const en=['US','GB','AU','NZ','IE'];
+  if(en.includes(d.country_code)) window.location='en/index.html';
+  else window.location='fr/index.html';
+}).catch(()=>window.location='fr/index.html');
+</script>
+</head><body></body></html>

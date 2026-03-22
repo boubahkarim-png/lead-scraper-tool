@@ -1,43 +1,4 @@
-[build]
-  publish = "public"
-  command = "# No build command needed for a static site"
-
-[build.environment]
-  NODE_VERSION = "16"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
 [[redirects]]
-  from = "/fr/*"
-  to = "/fr/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/en/*"
-  to = "/en/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/fr/:splat"
-  status = 302
-  force = false
-  conditions = {Language = ["fr"]}
-
-[[redirects]]
-  from = "/*"
-  to = "/en/:splat"
-  status = 302
-  force = false
-  conditions = {Language = ["en"]}
-
-[[redirects]]
-  from = "/*"
-  to = "/fr/:splat"
+  from = "/"
+  to = "/fr/"
   status = 302
