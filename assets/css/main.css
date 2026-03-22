@@ -15,3 +15,65 @@ body { font-family:'Inter',ui-sans-serif,system-ui; }
 .btn-secondary { border:2px solid var(--primary); color:var(--primary); padding:10px 28px; border-radius:8px; font-weight:600; transition:all .3s ease; }
 .btn-secondary:hover { background:#e0f2fe; }
 .section-divider { height:4px; background:linear-gradient(90deg,#0284c7,#7dd3fc,#0284c7); border-radius:2px; margin:0 auto 48px; width:80px; }
+
+/* Hero image — smaller, proper proportions */
+.hero-img {
+  max-height: 380px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+/* Hero section layout */
+.hero-text { flex: 1 1 55%; }
+.hero-image-wrap { flex: 1 1 40%; max-width: 44%; }
+
+@media (max-width: 1024px) {
+  .hero-image-wrap { max-width: 100%; }
+}
+
+/* Desktop nav — always visible, no toggle */
+#main-header nav a,
+#main-header nav button {
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+/* Dropdown on hover — CSS only, no JS needed */
+.nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  min-width: 220px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  border: 1px solid #f0f0f0;
+  padding: 8px 0;
+  z-index: 100;
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 0.875rem;
+  color: #374151;
+  transition: background 0.15s;
+}
+.nav-dropdown-menu a:hover { background: #eff6ff; color: #0284c7; }
+
+/* Language toggle */
+.lang-toggle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border: 1.5px solid #0284c7;
+  border-radius: 6px;
+  color: #0284c7;
+  transition: all 0.2s;
+}
+.lang-toggle:hover { background: #0284c7; color: white; }
