@@ -199,59 +199,89 @@ def scrape_business_website(url):
 
 
 def search_business_listings(query, location, max_results=30):
-    """Search for business listings using DuckDuckGo"""
+    """Search for actual business websites"""
     businesses = []
-    search_query = f"{query} {location} site:.com OR site:.fr OR site:.ch OR site:.be OR site:.ca"
     
     headers = {'User-Agent': random.choice(USER_AGENTS)}
-    url = f"https://duckduckgo.com/html/?q={query.replace(' ', '+')}+{location.replace(' ', '+')}"
     
-    try:
-        logger.info(f"Searching: {query} in {location}")
-        response = requests.get(url, headers=headers, timeout=30)
-        
-        if response.status_code != 200:
-            return []
-        
-        soup = BeautifulSoup(response.text, 'html.parser')
-        
-        for result in soup.select('.result')[:max_results]:
-            try:
-                title_elem = result.select_one('.result__a')
-                if not title_elem:
-                    continue
-                
-                title = title_elem.get_text(strip=True)
-                href = title_elem.get('href', '')
-                
-                # Clean URL
-                if 'uddg=' in href:
-                    href = href.split('uddg=')[1].split('&')[0]
-                    from urllib.parse import unquote
-                    href = unquote(href)
-                
-                # Skip social media and directories
-                skip_domains = ['facebook', 'linkedin', 'instagram', 'twitter', 'youtube',
-                               'yelp', 'tripadvisor', 'pagesjaunes', '118712', 'houzz']
-                if any(d in href.lower() for d in skip_domains):
-                    continue
-                
-                if href.startswith('http'):
-                    businesses.append({
-                        'name': title,
-                        'url': href,
-                        'location': location
-                    })
-                    
-            except:
+    # Search queries that return actual businesses
+    queries = [
+        f'{query} {location} contact email',
+        f'{query} {location} site:.fr contact',
+        f'{query} {location} site:.ch kontakt',
+        f'{query} {location} site:.be contact',
+        f'{query} {location} site:.ca contact',
+    ]
+    
+    for search_query in queries[:2]:  # Try top 2 queries
+        try:
+            url = f"https://duckduckgo.com/html/?q={search_query.replace(' ', '+')}"
+            logger.info(f"Searching: {search_query}")
+            response = requests.get(url, headers=headers, timeout=30)
+            
+            if response.status_code != 200:
                 continue
-        
-        time.sleep(random.uniform(1, 2))
-        
-    except Exception as e:
-        logger.error(f"Search error: {e}")
+            
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            for result in soup.select('.result')[:max_results]:
+                try:
+                    title_elem = result.select_one('.result__a')
+                    if not title_elem:
+                        continue
+                    
+                    title = title_elem.get_text(strip=True)
+                    href = title_elem.get('href', '')
+                    
+                    # Clean URL
+                    if 'uddg=' in href:
+                        href = href.split('uddg=')[1].split('&')[0]
+                        from urllib.parse import unquote
+                        href = unquote(href)
+                    
+                    # Skip non-business sites
+                    skip_domains = ['facebook', 'linkedin', 'instagram', 'twitter', 'youtube',
+                                   'yelp', 'tripadvisor', 'pagesjaunes', '118712', 'houzz',
+                                   'opentable', 'thefork', 'justeat', 'ubereats', 'deliveroo',
+                                   'booking', 'airbnb', 'expedia', 'google.', 'duckduckgo',
+                                   'wikipedia', 'blog', 'news', 'article', 'guide']
+                    
+                    href_lower = href.lower()
+                    title_lower = title.lower()
+                    
+                    if any(d in href_lower for d in skip_domains):
+                        continue
+                    
+                    # Skip if title suggests it's an article
+                    article_words = ['best', 'top', 'guide', 'review', 'article', 'blog', 
+                                    'list', 'ranking', 'ultimate', 'according']
+                    if any(w in title_lower for w in article_words):
+                        continue
+                    
+                    if href.startswith('http') and len(href) > 20:
+                        businesses.append({
+                            'name': title,
+                            'url': href,
+                            'location': location
+                        })
+                        
+                except:
+                    continue
+            
+            time.sleep(random.uniform(1, 2))
+            
+        except Exception as e:
+            logger.error(f"Search error: {e}")
     
-    return businesses
+    # Dedupe
+    seen = set()
+    unique = []
+    for b in businesses:
+        if b['url'] not in seen:
+            seen.add(b['url'])
+            unique.append(b)
+    
+    return unique[:max_results]
 
 
 def verify_email_smtp(email):
